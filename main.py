@@ -4,6 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
+
 # the next line is connected to home function because of the @ symbol
 @app.route("/")
 def home():
