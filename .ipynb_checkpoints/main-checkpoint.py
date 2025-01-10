@@ -4,17 +4,11 @@ import pandas as pd
 
 app = Flask(__name__)
 
-stations = pd.read_csv("weather_station_data/stations.txt", skiprows=17)
 
-# Choosing to keep only these two columns
-stations = stations[["STAID", "STANAME                                 "]]
-
-
-# The next line is connected to home function because of the @ symbol
+# the next line is connected to home function because of the @ symbol
 @app.route("/")
 def home():
-    # This creates the html table on the home page
-    return render_template("home.html", data=stations.to_html())
+    return render_template("home.html")
 
 
 # Special syntax around station and date
